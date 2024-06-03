@@ -167,7 +167,7 @@ class DatasetLMDB(data.Dataset):
 ITS_train_loader_lmdb = DataLoader(
     dataset=DatasetLMDB(os.path.join(path, 'ITS/ITS.lmdb'), size=crop_size), batch_size=BS,
     shuffle=True, pin_memory=True)
-ITS_test_loader = DataLoader(dataset=RESIDE_Dataset(os.path.join(path, 'SOTS/indoor'), train=False, size='whole img'),
+ITS_test_loader = DataLoader(dataset=RESIDE_Dataset(os.path.join(path, 'SOTS/SOTS/indoor'), train=False, size='whole img'),
                              batch_size=1, shuffle=False)
 # OTS_train_loader_all = DataLoader(
 #     dataset=DatasetLMDB(os.path.join(path, 'OTS/OTS.lmdb'), size=crop_size), batch_size=BS,
