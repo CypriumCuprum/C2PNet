@@ -4,6 +4,7 @@ import pickle
 import random
 import sys
 
+import torch
 import lmdb
 import torch.utils.data as data
 import torchvision.transforms as tfs
@@ -165,7 +166,7 @@ class DatasetLMDB(data.Dataset):
 
 
 train_dataset = DatasetLMDB(os.path.join(path, 'ITS/ITS.lmdb'), size=crop_size)
-indices = torch.randperm(len(train_dataset))[:1000]
+indices = torch.tensor([i for i in range(1000)])
 train_dataset1000 = data.Subset(train_dataset,indices)
 ITS_train_loader_lmdb = DataLoader(
     dataset=train_dataset1000, batch_size=BS,
