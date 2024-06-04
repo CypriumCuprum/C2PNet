@@ -171,6 +171,7 @@ def test(test_model, loader_test):
 if __name__ == "__main__":
     loader_train = loaders_[opt.trainset]
     loader_test = loaders_[opt.testset]
+    print(len(loader_train))
     net = models_[opt.net]
     net = net.to(opt.device)
     pytorch_total_params = sum(p.nelement() for p in net.parameters() if p.requires_grad)
