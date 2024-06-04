@@ -166,9 +166,9 @@ class DatasetLMDB(data.Dataset):
 
 train_dataset = DatasetLMDB(os.path.join(path, 'ITS/ITS.lmdb'), size=crop_size)
 indices = torch.randperm(len(train_dataset))[:1000]
-train_dataset3000 = data.Subset(train_dataset,indices)
+train_dataset1000 = data.Subset(train_dataset,indices)
 ITS_train_loader_lmdb = DataLoader(
-    dataset=train_dataset3000, batch_size=BS,
+    dataset=train_dataset1000, batch_size=BS,
     shuffle=True, pin_memory=True)
 ITS_test_loader = DataLoader(dataset=RESIDE_Dataset(os.path.join(path, 'SOTS/SOTS/indoor'), train=False, size='whole img'),
                              batch_size=1, shuffle=False)
